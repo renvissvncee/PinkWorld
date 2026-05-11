@@ -4,14 +4,24 @@ from aiogram.filters import Command
 from aiogram.types import FSInputFile, InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 
+from aiogram.client.default import DefaultBotProperties
+from aiogram.client.session.aiohttp import AiohttpSession
+
 # Токен бота (замени на свой)
 BOT_TOKEN = "8677048593:AAHjszFJcHE6NGxMY3-k0hQubVqyNhjkFBw"
+
+session = AiohttpSession()
+bot = Bot(
+    token=BOT_TOKEN,
+    session=session,
+    default=DefaultBotProperties(parse_mode="HTML")
+)
+
 
 # Хранение состояния пользователей (простой словарь)
 user_state = {}
 
 # Создаем бота и диспетчер
-bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 
@@ -276,7 +286,10 @@ async def handle_message(message: types.Message):
 
 # Запуск бота
 async def main():
-    await bot.delete_webhook(drop_pending_updates=True)
+    try:
+        await bot.delete_webhook(drop_pending_updates=True)
+    except Exception as e:
+        print("Webhook skip:", e)
     print("🤖 Бот запущен!")
     await dp.start_polling(bot)
 
