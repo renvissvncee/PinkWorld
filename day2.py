@@ -113,16 +113,17 @@ async def send_day2_page3(message: types.Message):
 async def send_day2_page3_done(message: types.Message):
 
     try:
-        photo = FSInputFile("content/photos/day2_completed.jpg")
+        photo = FSInputFile("content/photos/day3_page1_done.jpg")
         await message.answer_photo(photo)
     except:
         pass
 
     try:
-        voice = FSInputFile("content/voices/day2_completed.ogg")
+        voice = FSInputFile("content/voices/day3_page1_done.ogg")
         await message.answer_voice(voice)
     except:
         pass
+
 
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="Открыть страницу 7", callback_data="complete_day2")]

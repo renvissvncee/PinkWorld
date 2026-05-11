@@ -20,13 +20,13 @@ async def send_day3_page1(message: types.Message):
 # День 3, Страница 1 - после ввода слова
 async def send_day3_page1_done(message: types.Message):
     try:
-        photo = FSInputFile("content/photos/day3_page1_done.jpg")
+        photo = FSInputFile("content/photos/day2_completed.jpg")
         await message.answer_photo(photo)
     except:
         pass
 
     try:
-        voice = FSInputFile("content/voices/day3_page1_done.ogg")
+        voice = FSInputFile("content/voices/day2_completed.ogg")
         await message.answer_voice(voice)
     except:
         pass
