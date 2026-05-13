@@ -11,7 +11,7 @@ async def send_day3_page1(message: types.Message):
         pass
 
     try:
-        voice = FSInputFile("content/voices/day2_page3.ogg")
+        voice = FSInputFile("content/voices/day2_page3.mp3")
         await message.answer_voice(voice)
     except:
         pass
@@ -46,7 +46,7 @@ async def send_day3_page2(message: types.Message):
         pass
 
     try:
-        voice = FSInputFile("content/voices/day3_page2.ogg")
+        voice = FSInputFile("content/voices/day3_page2.mp3")
         await message.answer_voice(voice)
     except:
         pass
@@ -88,7 +88,7 @@ async def send_day3_page3(message: types.Message):
         pass
 
     try:
-        voice = FSInputFile("content/voices/day3_page3.ogg")
+        voice = FSInputFile("content/voices/day3_page3.mp3")
         await message.answer_voice(voice)
     except:
         pass
