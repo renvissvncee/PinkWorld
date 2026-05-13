@@ -103,7 +103,7 @@ async def send_day3_page3_after_first_word(message: types.Message):
         pass
 
     try:
-        voice = FSInputFile("content/voices/day3_done.ogg")
+        voice = FSInputFile("content/voices/day3_done.mp3")
         await message.answer_voice(voice)
     except:
         pass
